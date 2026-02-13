@@ -1,0 +1,19 @@
+{
+  "config": "configs/default.yaml",
+  "checkpoint": "checkpoints/best_model.pth",
+  "split": "test",
+  "num_samples": 750,
+  "metrics": {
+    "mean_auroc": 0.49509000764154437,
+    "micro_auroc": 0.4930181092701892,
+    "expected_calibration_error": 0.01228433940410614,
+    "average_precision": 0.5029602870884888,
+    "f1_score": 0.33735270612323925,
+    "auroc_Atelectasis": 0.4882232462877625,
+    "auroc_Cardiomegaly": 0.5114855389696827,
+    "auroc_Consolidation": 0.48381275759711273,
+    "auroc_Edema": 0.48019929191411603,
+    "auroc_Pleural Effusion": 0.5117292034390479,
+    "uncertain_label_auroc": 0.4932324840764331
+  }
+}
