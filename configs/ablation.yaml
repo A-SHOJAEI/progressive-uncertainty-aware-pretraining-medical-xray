@@ -1,0 +1,60 @@
+# Ablation study: Baseline without curriculum learning and confidence calibration
+
+# Random seed for reproducibility
+seed: 42
+
+# Dataset configuration
+num_samples: 5000
+num_classes: 5
+image_size: 224
+uncertain_ratio: 0.3
+train_ratio: 0.7
+val_ratio: 0.15
+test_ratio: 0.15
+
+# Dataloader configuration
+batch_size: 32
+num_workers: 4
+
+# Model configuration
+model_name: resnet50
+pretrained: true
+dropout: 0.3
+use_temperature_scaling: false
+
+# Training configuration
+num_epochs: 50
+learning_rate: 0.0001
+weight_decay: 0.0001
+mixed_precision: true
+gradient_clip: 1.0
+
+# Curriculum learning - DISABLED for baseline
+curriculum_strategy: linear
+curriculum_warmup_epochs: 0
+
+# Loss configuration - FIXED weights (no curriculum)
+base_weight: 1.0
+uncertain_weight_min: 0.5
+uncertain_weight_max: 0.5
+confidence_calibration: false
+
+# Learning rate scheduler
+scheduler_type: cosine
+scheduler_warmup_epochs: 3
+min_lr: 0.000001
+
+# Early stopping
+early_stopping_patience: 10
+
+# Advanced augmentation - DISABLED for baseline
+advanced_augmentation: false
+
+# Checkpoint configuration
+checkpoint_dir: checkpoints_ablation
+save_frequency: 10
+
+# Logging
+log_level: INFO
+mlflow_tracking: true
+experiment_name: ablation_baseline_no_curriculum
