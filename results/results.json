@@ -1,0 +1,33 @@
+{
+  "experiment": "progressive-uncertainty-aware-pretraining-medical-xray",
+  "training": {
+    "num_epochs": 13,
+    "final_train_loss": 0.1718,
+    "final_val_loss": 0.9043,
+    "best_val_loss": 0.5743,
+    "best_epoch": 2,
+    "learning_rate_schedule": "cosine",
+    "initial_learning_rate": 0.0001
+  },
+  "evaluation": {
+    "mean_auroc": 0.4951,
+    "micro_auroc": 0.4930,
+    "expected_calibration_error": 0.0123,
+    "average_precision": 0.5030,
+    "f1_score": 0.3374,
+    "uncertain_label_auroc": 0.4932,
+    "num_test_samples": 750
+  },
+  "per_class_auroc": {
+    "Atelectasis": 0.4882,
+    "Cardiomegaly": 0.5115,
+    "Consolidation": 0.4838,
+    "Edema": 0.4802,
+    "Pleural Effusion": 0.5117
+  },
+  "training_history": {
+    "train_loss": [0.5720, 0.5715, 0.5700, 0.5657, 0.5559, 0.5320, 0.4928, 0.4417, 0.3849, 0.3216, 0.2616, 0.2104, 0.1718],
+    "val_loss": [0.5744, 0.5744, 0.5743, 0.5753, 0.5760, 0.5825, 0.5989, 0.6226, 0.6633, 0.7332, 0.7838, 0.8543, 0.9043]
+  },
+  "notes": "Trained with progressive uncertainty-aware curriculum learning on 5000 synthetic chest X-ray samples with 30% uncertain labels. ResNet-50 backbone pretrained on ImageNet-1K."
+}

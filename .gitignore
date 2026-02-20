@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyc
 .Python
 build/
 develop-eggs/
@@ -24,8 +25,7 @@ wheels/
 venv/
 env/
 ENV/
-.venv
-.env
+.venv/
 
 # IDEs
 .vscode/
@@ -58,8 +58,9 @@ checkpoints/*.pt
 logs/
 *.log
 mlruns/
+mlflow.db
 
-# Results
+# Results - track results.json but exclude generated artifacts
 results/*.png
 results/*.jpg
 results/*.pdf
@@ -79,22 +80,13 @@ htmlcov/
 .dmypy.json
 dmypy.json
 
+# Environment
+.env
+.env.local
 
-# Auto-added by publisher
-# Training artifacts (auto-added by publisher)
-checkpoints/
-*.pt
-*.pth
+# Other artifacts
 *.onnx
 *.bin
 *.safetensors
 wandb/
-mlflow.db
-data/*.arrow
-data/*.parquet
-data/*.h5
-data/*.hdf5
-data/raw/
-data/processed/
 outputs/
-.venv/
